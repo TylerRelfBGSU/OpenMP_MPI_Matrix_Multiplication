@@ -1,0 +1,10 @@
+#PBS -l nodes=1:ppn:=28
+#PBS -l walltime=1:00:00
+#PBS -m ae
+#PBS -j oe
+#PBS -A PCS0288
+#PBS -n JOB_NAME
+
+export OMP_NUM_THREADS 28
+cd $PBS_O_WORKDIR
+./OpenMP > $PBS_O_WORKDIR/results.csv
